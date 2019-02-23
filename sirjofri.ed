@@ -1,0 +1,22 @@
+,s/#005577/#007700/g
+,s/static const char \*tags\[\] = \{ "1", "2", "3", "4", "5", "6", "7", "8", "9" \};/static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };/g
+/Firefox
+a
+	{ "st",       NULL,       NULL,       0,            0,           1,         1,        -1 },
+.
+/Layout layouts\[\]
++2,+4c
+	{ "│ ├─",     tile },    /* first entry is default */
+	{ " □  ",     NULL },    /* no layout function means floating behavior */
+	{ "「 」",    monocle },
+.
+/MODKEY\|ShiftMask, *XK_Return, *spawn, *\{.v = termcmd }
+a
+	{ MODKEY,                       XK_c,      spawn,          {.v = termcmd } },
+.
+/killclient
+s/XK_c/XK_q/g
+/quit
+s/XK_q/XK_e/g
+w
+q
